@@ -16,7 +16,10 @@ for (const f of files) {
   }
 }
 const h2 = (p) => (readFileSync(join(root, p), 'utf8').match(/<h2>/g) ?? []).length;
-const [en, pt] = [h2('privacy/pizzaria/index.html'), h2('privacy/pizzaria/pt-BR/index.html')];
-if (en !== pt) problems.push(`the English policy has ${en} sections and the Portuguese one ${pt}`);
+const apps = readdirSync(join(root, 'privacy'));
+for (const app of apps) {
+  const [en, pt] = [h2(`privacy/${app}/index.html`), h2(`privacy/${app}/pt-BR/index.html`)];
+  if (en !== pt) problems.push(`${app}: the English policy has ${en} sections and the Portuguese one ${pt}`);
+}
 if (problems.length) { console.error('check FAILED:\n - ' + problems.join('\n - ')); process.exit(1); }
-console.log(`check passed (${files.length} files, ${en} sections in each language)`);
+console.log(`check passed (${files.length} files, ${apps.length} apps with matching sections in each language)`);
