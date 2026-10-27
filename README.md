@@ -8,6 +8,7 @@ Static pages for Fluir Labs apps, served by GitHub Pages at https://ichagas.gith
 | Política de Privacidade (Português) | `/privacy/pizzaria/pt-BR/` |
 | Drive Dash Pro Privacy Policy (English) | `/privacy/drivedashpro/` |
 | Drive Dash Pro Política de Privacidade (Português) | `/privacy/drivedashpro/pt-BR/` |
+| Drive Dash Pro Support (English; the App Store's Support URL) | `/support/drivedashpro/` |
 | AdMob seller file | `/app-ads.txt` |
 
 ## Before publishing
